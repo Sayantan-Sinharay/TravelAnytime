@@ -18,7 +18,6 @@
 
 .containerize {
   display: flex;
-  flex-direction: column;
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -245,6 +244,51 @@ body {
 .footer__title {
   font-weight: 700;
   font-size: 2rem;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 1.5rem;
+}
+.form__container input,
+.form__container textarea {
+  width: 100%;
+  outline: none;
+  border: 2px solid #1e1e1e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.form__container button {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+  background-color: #1e1e1e;
+  padding: 0.5rem;
+}
+.form__image-container img {
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.form__section {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 5rem;
+}
+.form__title {
+  font-size: 5rem;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
