@@ -33,73 +33,67 @@ body {
 }
 
 .navbar {
-  display: none;
-  background-color: $color-primary-dark;
-  color: white;
-  font-size: 18px;
-  position: relative;
-}
-
-.navbar__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.navbar__logo a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.navbar__menu {
-  list-style: none;
-  display: flex;
-}
-
-.navbar__menu li {
-  margin-right: 20px;
-}
-
-.navbar__menu a {
-  text-decoration: none;
-  color: white;
-}
-
-.navbar__icons a {
-  margin-right: 20px;
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-.navbar__toggle {
-  display: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .navbar__menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: $color-primary-dark;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .navbar__menu.active {
+  padding: 0;
+  font-size: 0.5rem;
+  &__actions {
     display: flex;
+    align-items: center;
+  }
+  &__button {
+    border: 3px solid $color-primary-dark;
+    outline: none;
+    font-size: 1.5em;
+    background-color: transparent;
+    padding: 0.5em 3em;
+    border-radius: 0.5em;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__content {
+    padding: 2em 4em;
+    background-color: $color-primary-light;
+  }
+  &__logo {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    background-color: $color-primary-dark;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  &__item {
+    font-size: 1.5em;
+    font-weight: 300;
+    &:hover,
+    &--active {
+      font-weight: 700;
+    }
+  }
+  &__menu {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a {
+      text-decoration: none;
+      color: $color-primary-dark;
+    }
+  }
+  &__toggle {
+    display: none;
+    font-size: 2em;
   }
 
-  .navbar__toggle {
-    display: block;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -237,6 +231,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 5rem;
+    flex-wrap: wrap;
     .footer-navlinks {
       &__container {
         display: flex;
@@ -284,77 +279,43 @@ body {
       line-height: 3.5rem;
     }
   }
+}
+
+@media screen and (min-width: 1024px) {
   .background-banner {
     &__image {
-      width: 100vw;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    &__button {
-      background-color: transparent;
-      color: white;
-      border: 2px solid white;
-      font-size: 1.05rem;
-      font-family: 500;
-      padding: 0.5rem 3rem;
-      border-radius: 0.2rem;
-    }
-    &__container {
-      background-color: hsla(0, 0%, 0%, 0.8);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 2rem;
-      color: white;
+      height: 50vh;
     }
     &__content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       gap: 3rem;
     }
-    &__options {
-      list-style: none;
-      padding: 0;
-      display: flex;
-    }
     &__section {
-      position: relative;
       .option {
         &__item {
-          padding: 0 1rem;
           border-left: 2px solid white;
-
           &:first-child {
             border: none;
           }
         }
       }
-      .title {
-        &__highlight {
-          text-decoration: underline;
-          font-style: italic;
-        }
-      }
     }
-
-    &__title {
-      text-align: center;
-      font-size: 4rem;
-      width: 65%;
+  }
+  .navbar {
+    font-size: 1rem;
+    &__menu {
+      gap: 5em;
     }
   }
 }
 
-@media screen and (min-width: 1024px) {
-}
-
 @media screen and (min-width: 1440px) {
+  .background-banner {
+    &__image {
+      height: 75vh;
+    }
+    &__title {
+      font-size: 4rem;
+      width: 65%;
+    }
+  }
 }
